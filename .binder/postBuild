@@ -1,0 +1,1 @@
+sed -i 's/# c.LabApp.collaborative = False/c.LabApp.collaborative = True/' ~/.jupyter/jupyter_lab_config.py
