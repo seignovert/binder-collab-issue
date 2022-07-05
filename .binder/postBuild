@@ -1,1 +1,6 @@
-jupyter server --generate-config && sed -i 's/# c.LabApp.collaborative = False/c.LabApp.collaborative = True/' ~/.jupyter/jupyter_lab_config.py
+if [ ! ~/.jupyter/jupyter_server_config.py ]
+then
+    jupyter server --generate-config
+fi
+
+sed -i 's/# c.LabApp.collaborative = False/c.LabApp.collaborative = True/' ~/.jupyter/jupyter_server_config.py
