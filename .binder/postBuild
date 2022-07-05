@@ -1,4 +1,4 @@
-if [ ! ~/.jupyter/jupyter_server_config.py ]
+if [ ! -f ~/.jupyter/jupyter_server_config.py ]
 then
     jupyter server --generate-config
 fi
