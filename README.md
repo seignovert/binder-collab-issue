@@ -31,12 +31,12 @@ Expected behavior (`jupyter_config.json` at the root of the project):
 
 Workaround with `postBuild`:
 ```
-if [ -f ~/.jupyter/jupyter_server_config.py ]
+if [ -f ~/.jupyter/jupyter_lab_config.py ]
 then
-    sed -i 's/# c.ServerApp.collaborative = False/c.ServerApp.collaborative = True/' ~/.jupyter/jupyter_server_config.py
+    sed -i 's/# c.LabApp.collaborative = False/c.LabApp.collaborative = True/' ~/.jupyter/jupyter_lab_config.py
 else
     mkdir -p  ~/.jupyter/
-    echo 'c.ServerApp.collaborative = True' > ~/.jupyter/jupyter_server_config.py
+    echo 'c.LabApp.collaborative = True' > ~/.jupyter/jupyter_lab_config.py
 fi
 ```
 
