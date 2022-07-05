@@ -28,3 +28,11 @@ Issue example (`jupyter_config.json` in `.binder/` folder):
 Expected behavior (`jupyter_config.json` at the root of the project):
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/seignovert/binder-collab-issue/expected?labpath=test.ipynb)
+
+Workaround with `postBuild`:
+```
+jupyter server --generate-config
+sed -i 's/# c.LabApp.collaborative = False/c.LabApp.collaborative = True/' ~/.jupyter/jupyter_lab_config.py
+```
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/seignovert/binder-collab-issue/postBuild?labpath=test.ipynb)
