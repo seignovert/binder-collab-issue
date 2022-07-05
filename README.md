@@ -31,8 +31,12 @@ Expected behavior (`jupyter_config.json` at the root of the project):
 
 Workaround with `postBuild`:
 ```
-jupyter server --generate-config
-sed -i 's/# c.LabApp.collaborative = False/c.LabApp.collaborative = True/' ~/.jupyter/jupyter_lab_config.py
+if [ -f ~/.jupyter/jupyter_server_config.py ]
+then
+    sed -i 's/# c.LabApp.collaborative = False/c.LabApp.collaborative = True/' ~/.jupyter/jupyter_server_config.py
+else
+    echo 'c.LabApp.collaborative = True' > ~/.jupyter/jupyter_server_config.py
+fi
 ```
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/seignovert/binder-collab-issue/postBuild?labpath=test.ipynb)
